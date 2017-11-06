@@ -1,0 +1,4 @@
+rootProject.name = 'sax-converter'
+include 'spring-sax-converter'
+include 'core'
+

@@ -13,8 +13,6 @@ public class FinishStateMachineParser {
 
     private ParserState state = ParserState.INITIAL_STATE;
 
-    private ParserState prevState;
-
     /**
      * Возвращает состояние автомата согласно символу перехода.
      *
@@ -25,7 +23,6 @@ public class FinishStateMachineParser {
         switch (state) {
             case INITIAL_STATE: {
                 if (symbol == '<') {
-                    prevState = state;
                     return getStateWithPrevState(ParserState.OPEN_TAG);
                 } else {
                     log.log(Level.WARNING, "error automat transmition");
@@ -113,7 +110,6 @@ public class FinishStateMachineParser {
      * Возвращает состояние, записав информацию об предидущем состоянии.
      */
     private ParserState getStateWithPrevState(ParserState transmitionState) {
-        prevState = state;
         state = transmitionState;
         return transmitionState;
     }

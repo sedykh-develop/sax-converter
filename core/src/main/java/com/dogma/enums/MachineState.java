@@ -1,14 +1,14 @@
 package com.dogma.enums;
 
 /**
- * Состояние разбора документа.
+ * Состояния автомата.
  */
-public enum ParserState {
+public enum MachineState {
     INITIAL_STATE,
     OPEN_TAG,
     ELEMENT,
     END_SEQUENCE,
-    ATTRUBUTE,
+    ATTRIBUTE,
     END_TAG,
     OPEN_CLOSE_TAG,
     CLOSE_TAG,

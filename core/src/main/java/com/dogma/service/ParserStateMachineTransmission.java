@@ -1,19 +1,13 @@
 package com.dogma.service;
 
 import com.dogma.enums.MachineState;
-import lombok.Setter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.dogma.exceptions.StateMachineTransmissionException;
 
 
 /**
  * Сервис осуществления переходов для автомата..
  */
 public class ParserStateMachineTransmission {
-    private Logger log = LoggerFactory.getLogger(this.getClass());
-
-    @Setter
-    private MachineState state = MachineState.INITIAL_STATE;
 
     /**
      * Возвращает состояние автомата согласно символу перехода.
@@ -21,105 +15,141 @@ public class ParserStateMachineTransmission {
      * @param symbol символ перехода.
      * @return состояние автомата.
      */
-    public MachineState getState(final char symbol) {
-        switch (state) {
+    public MachineState getState(final char symbol, final MachineState prevState) throws
+            StateMachineTransmissionException {
+        switch (prevState) {
             case INITIAL_STATE: {
                 if (symbol == '<') {
-                    return getStateWithPrevState(MachineState.OPEN_TAG);
+                    return MachineState.OPEN_TAG;
                 } else {
-                    return state;
+                    throw new StateMachineTransmissionException(prevState);
                 }
             }
             case OPEN_TAG: {
-                if (symbol != '<' && symbol != '>') {
-                    System.out.println(symbol);
-                    return getStateWithPrevState(MachineState.ELEMENT);
+                if (symbol == '?') {
+                    return MachineState.XML_CONTENT;
+                } else if (symbol == '/') {
+                    return MachineState.START_END_ELEMENT;
                 } else {
-                    return state;
+                    return MachineState.ELEMENT;
+                }
+            }
+            case XML_CONTENT: {
+                if (symbol == ' ') {
+                    return MachineState.XML_ATTRIBUTE;
+                } else {
+                    return prevState;
+                }
+            }
+            case XML_ATTRIBUTE: {
+                if (symbol == ' ') {
+                    return MachineState.END_XML_ATTRIBUTE;
+                } else if (symbol == '>') {
+                    return MachineState.END_XML_CONTENT;
+                } else {
+                    return prevState;
+                }
+            }
+            case END_XML_ATTRIBUTE: {
+                if (symbol == '>') {
+                    return MachineState.END_XML_CONTENT;
+                } else {
+                    return MachineState.XML_ATTRIBUTE;
+                }
+            }
+            case END_XML_CONTENT: {
+                if (symbol == '<') {
+                    return MachineState.OPEN_TAG;
+                } else {
+                    throw new StateMachineTransmissionException(prevState);
                 }
             }
             case ELEMENT: {
                 switch (symbol) {
+                    case '>': {
+                        return MachineState.END_OPEN_TAG;
+                    }
                     case '/': {
-                        return getStateWithPrevState(MachineState.OPEN_CLOSE_TAG);
-                    }
-                    case '>': {
-                        return getStateWithPrevState(MachineState.END_TAG);
+                        return MachineState.START_CLOSE_TAG;
                     }
                     case ' ': {
-                        return getStateWithPrevState(MachineState.END_SEQUENCE);
+                        return MachineState.END_SEQUENCE;
                     }
                     default: {
-                        return getStateWithPrevState(MachineState.ELEMENT);
+                        return prevState;
                     }
                 }
             }
-            case END_SEQUENCE: {
-                return getStateWithPrevState(MachineState.ATTRIBUTE);
-            }
-            case ATTRIBUTE: {
-                switch (symbol) {
-                    case '>': {
-                        return getStateWithPrevState(MachineState.END_TAG);
-                    }
-                    case ' ': {
-                        return getStateWithPrevState(MachineState.END_SEQUENCE);
-                    }
-                    default: {
-                        return getStateWithPrevState(MachineState.ATTRIBUTE);
-                    }
-                }
-            }
-            case END_TAG: {
-                return getStateWithPrevState(MachineState.VALUE);
-            }
-            case OPEN_CLOSE_TAG: {
-                if (symbol == '>') {
-                    return getStateWithPrevState(MachineState.CLOSE_TAG);
-                } else {
-                    return MachineState.END_ELEMENT;
-                }
-            }
-            case CLOSE_TAG: {
+            case END_OPEN_TAG: {
                 if (symbol == '<') {
-                    return getStateWithPrevState(MachineState.OPEN_TAG);
-                } else {
-                    return state;
-                }
-            }
-            case VALUE: {
-                if (symbol == '<') {
-                    return getStateWithPrevState(MachineState.END_VALUE);
+                    return MachineState.OPEN_TAG;
                 } else {
                     return MachineState.VALUE;
                 }
             }
+            case START_CLOSE_TAG: {
+                if (symbol == '>') {
+                    return MachineState.CLOSE_TAG;
+                } else {
+                    throw new StateMachineTransmissionException(prevState);
+                }
+            }
+            case END_SEQUENCE: {
+                return MachineState.ATTRIBUTE;
+            }
+            case VALUE: {
+                if (symbol == '<') {
+                    return MachineState.END_VALUE;
+                } else {
+                    return prevState;
+                }
+            }
             case END_VALUE: {
                 if (symbol == '/') {
-                    return getStateWithPrevState(MachineState.OPEN_CLOSE_TAG);
+                    return MachineState.START_END_ELEMENT;
                 } else {
-                    log.error("END VALUE BAD");
+                    throw new StateMachineTransmissionException(prevState);
                 }
+            }
+            case START_END_ELEMENT: {
+                return MachineState.END_ELEMENT;
             }
             case END_ELEMENT: {
                 if (symbol == '>') {
-                    return getStateWithPrevState(MachineState.CLOSE_TAG);
+                    return MachineState.CLOSE_END_ELEMENT;
                 } else {
-                    return state;
+                    return prevState;
                 }
             }
-            default: {
-                return state; //log.error("error machine transmission");
+            case CLOSE_END_ELEMENT: {
+                if (symbol == '<') {
+                    return MachineState.OPEN_TAG;
+                } else {
+                    throw new StateMachineTransmissionException(prevState);
+                }
+            }
+            case CLOSE_TAG: {
+                if (symbol == '<') {
+                    return MachineState.OPEN_TAG;
+                }
+            }
+            case ATTRIBUTE: {
+                switch (symbol) {
+                    case ' ': {
+                        return MachineState.END_SEQUENCE;
+                    }
+                    case '>': {
+                        return MachineState.END_OPEN_TAG;
+                    }
+                    case '/': {
+                        return MachineState.START_CLOSE_TAG;
+                    }
+                    default: {
+                        return prevState;
+                    }
+                }
             }
         }
-        //log.error("error machine transmission");
-    }
-
-    /**
-     * Возвращает состояние, записав информацию об предидущем состоянии.
-     */
-    private MachineState getStateWithPrevState(MachineState transmitionState) {
-        state = transmitionState;
-        return transmitionState;
+        throw new StateMachineTransmissionException(prevState);
     }
 }

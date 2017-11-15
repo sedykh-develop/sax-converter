@@ -1,12 +1,14 @@
 package com.dogma.service;
 
 import com.dogma.enums.MachineState;
-import lombok.Setter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+
+import lombok.Setter;
 
 /**
  * Действия конечного автомата.
@@ -40,7 +42,7 @@ public class ParserStateMachineAction {
                 registerAction(state, indexElement);
                 break;
             }
-            case END_TAG: {
+            case END_OPEN_TAG: {
                 endOpenTagAction();
                 break;
             }

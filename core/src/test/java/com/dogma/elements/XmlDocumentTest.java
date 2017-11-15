@@ -8,5 +8,4 @@ import com.dogma.annotations.*;
 @XmlDocument("ESADout_CU")
 public class XmlDocumentTest {
 
-    @XmlElement
 }

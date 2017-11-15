@@ -7,6 +7,7 @@ public enum MachineState {
     INITIAL_STATE,
     OPEN_TAG,
     ELEMENT,
+    END_ELEMENT,
     END_SEQUENCE,
     ATTRIBUTE,
     END_TAG,

@@ -21,14 +21,15 @@ class ParserStateMachineTransmissionJUnitTest {
                 'UTF-8')
                 .toCharArray()
         long before = System.currentTimeMillis()
-        ParserStateMachineTransmission transmission = new ParserStateMachineTransmission()
-        for (int k = 0; k < 1000; k++) {
+        ParserService service = new ParserService()
+        service.parse(document)
+        /*for (int k = 0; k < 1000; k++) {
             transmission.state = MachineState.INITIAL_STATE
             for (int i = 0; i < document.length; i++) {
                 MachineState state = transmission.getState(document[i])
                 state.toString()
             }
-        }
+        }*/
         println "${System.currentTimeMillis() - before}"
     }
 }

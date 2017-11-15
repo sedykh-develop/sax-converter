@@ -27,16 +27,15 @@ public class ParserStateMachineTransmission {
                 if (symbol == '<') {
                     return getStateWithPrevState(MachineState.OPEN_TAG);
                 } else {
-                    //log.error("error machine transmission");
-                    return null;
+                    return state;
                 }
             }
             case OPEN_TAG: {
                 if (symbol != '<' && symbol != '>') {
+                    System.out.println(symbol);
                     return getStateWithPrevState(MachineState.ELEMENT);
                 } else {
-                    //log.error("error machine transmission");
-                    return null;
+                    return state;
                 }
             }
             case ELEMENT: {
@@ -78,16 +77,14 @@ public class ParserStateMachineTransmission {
                 if (symbol == '>') {
                     return getStateWithPrevState(MachineState.CLOSE_TAG);
                 } else {
-                    //log.error("error machine transmission");
-                    return null;
+                    return MachineState.END_ELEMENT;
                 }
             }
             case CLOSE_TAG: {
                 if (symbol == '<') {
                     return getStateWithPrevState(MachineState.OPEN_TAG);
                 } else {
-                    //log.error("error machine transmission");
-                    return null;
+                    return state;
                 }
             }
             case VALUE: {
@@ -98,10 +95,21 @@ public class ParserStateMachineTransmission {
                 }
             }
             case END_VALUE: {
-                return getStateWithPrevState(MachineState.ELEMENT);
+                if (symbol == '/') {
+                    return getStateWithPrevState(MachineState.OPEN_CLOSE_TAG);
+                } else {
+                    log.error("END VALUE BAD");
+                }
+            }
+            case END_ELEMENT: {
+                if (symbol == '>') {
+                    return getStateWithPrevState(MachineState.CLOSE_TAG);
+                } else {
+                    return state;
+                }
             }
             default: {
-                return null;//log.error("error machine transmission");
+                return state; //log.error("error machine transmission");
             }
         }
         //log.error("error machine transmission");

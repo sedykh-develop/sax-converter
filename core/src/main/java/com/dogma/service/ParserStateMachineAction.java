@@ -1,9 +1,9 @@
 package com.dogma.service;
 
 import com.dogma.enums.MachineState;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.ContentHandler;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -14,15 +14,21 @@ import java.util.Queue;
 public class ParserStateMachineAction {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
+    @Setter
     private char[] document;
 
-    private ContentHandler handler;
+    @Setter
+    private ContentHandler handler = new ContentHandler();
 
     private Queue<ActionState> actionStatesStack = new ArrayDeque<ActionState>();
 
     public void onAction(final MachineState state, final int indexElement) {
         switch (state) {
             case ELEMENT: {
+                registerAction(state, indexElement);
+                break;
+            }
+            case END_ELEMENT: {
                 registerAction(state, indexElement);
                 break;
             }
@@ -42,7 +48,43 @@ public class ParserStateMachineAction {
     }
 
     private void endOpenTagAction() {
+        while (!actionStatesStack.isEmpty()) {
+            ActionState state = actionStatesStack.poll();
+            switch (state.machineState) {
+                case ELEMENT: {
+                    elementActions(state);
+                    break;
+                }
+                case ATTRIBUTE: {
+                    attributeActions(state);
+                    break;
+                }
+                case VALUE: {
+                    valueActions(state);
+                    break;
+                }
+                case END_ELEMENT: {
+                    endElementActions(state);
+                    break;
+                }
+            }
+        }
+    }
 
+    private void endElementActions(final ActionState state) {
+        handler.endElement("", new String(document, state.startIndex, state.length));
+    }
+
+    private void valueActions(final ActionState state) {
+        handler.value(new String(document, state.startIndex, state.length));
+    }
+
+    private void attributeActions(final ActionState state) {
+        handler.attribute("", new String(document, state.startIndex, state.length));
+    }
+
+    private void elementActions(final ActionState state) {
+        handler.element("", new String(document, state.startIndex, state.length));
     }
 
     /**
@@ -80,8 +122,8 @@ public class ParserStateMachineAction {
 
         public ActionState(final MachineState machineState, final int startIndex) {
             this.machineState = machineState;
-            this.startIndex = startIndex;
-            this.length++;
+            this.startIndex = startIndex + 1;
+            this.length = 1;
         }
 
         public void repeatActions() {

@@ -1,4 +1,5 @@
 rootProject.name = 'sax-converter'
 include 'spring-sax-converter'
 include 'core'
+include 'factories-generated'
 

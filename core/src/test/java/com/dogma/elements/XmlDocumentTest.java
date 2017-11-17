@@ -1,6 +1,6 @@
 package com.dogma.elements;
 
-import com.dogma.annotations.*;
+import com.dogma.annotations.XmlDocument;
 
 /**
  * Тестовый xml документ.

@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * Аннотация обозначающая сущность xml документа.
  */
 @Target(value = {ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.SOURCE)
 public @interface XmlDocument {
     /**
      * Название тега, с которого начинается документ.

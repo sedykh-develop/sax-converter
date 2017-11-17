@@ -1,31 +1,31 @@
 <Envelope>
-	<Header>
-		<RoutingInf xmlns="urn:customs.ru:Envelope:RoutingInf:1.0">
-			<EnvelopeID>8cb4439e-358b-47df-bacf-f2e0a8ed4163</EnvelopeID>
-			<SenderInformation>WMQ://RU.FTS.CITTU.ZTS/PI_UZ.TO</SenderInformation>
-			<ReceiverInformation>WMQ://RU.FTS.INT/PI.FROM</ReceiverInformation>
-			<PreparationDateTime>2017-11-01T19:36</PreparationDateTime>
-		</RoutingInf>
-		<ApplicationInf xmlns="urn:customs.ru:Envelope:RoutingInf:1.0">
-			<SoftKind>FOREIGN-ROUTER</SoftKind>
-			<SoftVersion>1.0.0</SoftVersion>
-			<MessageKind>PI.100001</MessageKind>
-		</ApplicationInf>
-	</Header>
-	<Body>
-		<SendMessage>
-			<PI_Container>
-				<DocumentID>4fceb7e0-20ee-4fe7-8463-292f981e2fbe</DocumentID>
-				<DispatchCountry>TT</DispatchCountry>
-				<MessageType>PI.100001</MessageType>
-				<UIN>17TT000010111</UIN>
-				<DateTime>2008-09-29T07:49:45</DateTime>
-				<DocBody>
-					<FreeDocument>
-						<AnyElement/>
-					</FreeDocument>
-				</DocBody>
-			</PI_Container>
-		</SendMessage>
-	</Body>
+    <Header>
+        <RoutingInf xmlns="urn:customs.ru:Envelope:RoutingInf:1.0">
+            <EnvelopeID>8cb4439e-358b-47df-bacf-f2e0a8ed4163</EnvelopeID>
+            <SenderInformation>WMQ://RU.FTS.CITTU.ZTS/PI_UZ.TO</SenderInformation>
+            <ReceiverInformation>WMQ://RU.FTS.INT/PI.FROM</ReceiverInformation>
+            <PreparationDateTime>2017-11-01T19:36</PreparationDateTime>
+        </RoutingInf>
+        <ApplicationInf xmlns="urn:customs.ru:Envelope:RoutingInf:1.0">
+            <SoftKind>FOREIGN-ROUTER</SoftKind>
+            <SoftVersion>1.0.0</SoftVersion>
+            <MessageKind>PI.100001</MessageKind>
+        </ApplicationInf>
+    </Header>
+    <Body>
+        <SendMessage>
+            <PI_Container>
+                <DocumentID>4fceb7e0-20ee-4fe7-8463-292f981e2fbe</DocumentID>
+                <DispatchCountry>TT</DispatchCountry>
+                <MessageType>PI.100001</MessageType>
+                <UIN>17TT000010111</UIN>
+                <DateTime>2008-09-29T07:49:45</DateTime>
+                <DocBody>
+                    <FreeDocument>
+                        <AnyElement/>
+                    </FreeDocument>
+                </DocBody>
+            </PI_Container>
+        </SendMessage>
+    </Body>
 </Envelope>

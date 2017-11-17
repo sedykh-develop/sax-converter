@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2001/06/soap-envelope">
+  <Header>
+    <RoutingInf xmlns="urn:customs.ru:Envelope:RoutingInf:1.0">
+<EnvelopeID>21c09389-e950-4aff-a8fa-df13471f26b1</EnvelopeID>
+      <SenderInformation>https://eps.customs.ru/broker-http-1</SenderInformation>
+      <ReceiverInformation>https://eps.customs.ru/broker-http-1</ReceiverInformation>
+      <PreparationDateTime>2016-11-30T12:21:55+03:00</PreparationDateTime>
+      <Priority>4</Priority>
+    </RoutingInf>
+    <EDHeader xmlns="urn:customs.ru:Envelope:EDHeader:2.0">
+      <MessageType>CMN.15003</MessageType>
+<ProccessID>7251579c-7562-4703-be5c-059da425d016</ProccessID>
+      <ParticipantID>103000000000322</ParticipantID>
+      <ReceiverCustoms>
+        <CustomsCode>10502030</CustomsCode>
+        <ExchType>524000</ExchType>
+      </ReceiverCustoms>
+    </EDHeader>
+    <ApplicationInf xmlns="urn:customs.ru:Envelope:ApplicationInf:1.0">
+      <SoftKind>FtsPortalEd</SoftKind>
+      <SoftVersion>5.11.0/3.3.10</SoftVersion>
+      <MessageKind>CMN.15003</MessageKind>
+    </ApplicationInf>
+  </Header>
+  <Body><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="urn:xml-dsig:transformation:v1.1" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411" /><Reference URI="#KeyInfo"><Transforms><Transform Algorithm="urn:xml-dsig:transformation:v1.1" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411" /><DigestValue>vFS/4XfU33/2PHsCilglTxG0ybhP5kyeGcwOuAZ+sIA=</DigestValue></Reference><Reference URI="#Object"><Transforms><Transform Algorithm="urn:xml-dsig:transformation:v1.1" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411" /><DigestValue>kwre9WUKC9txLk5Gz1wp5//NbbCF7RG9S3obPF0iOYE=</DigestValue></Reference></SignedInfo><SignatureValue>MIIExgYJKoZIhvcNAQcCoIIEtzCCBLMCAQExDDAKBgYqhQMCAgkFADALBgkqhkiG9w0BBwExggSRMIIEjQIBATCCAbMwggGjMSAwHgYJKoZIhvcNAQkBFhF2dWNAY2EuY3VzdG9tcy5ydTEaMBgGCCqFAwOBAwEBEgwwMDc3MzA2NTQ0NzExGDAWBgUqhQNkARINMTExNzc0Njg4OTk0MTF7MHkGA1UECgxy0KbQtdC90YLRgNCw0LvRjNC90L7QtSDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Qvi3RgtC10YXQvdC40YfQtdGB0LrQvtC1INGC0LDQvNC+0LbQtdC90L3QvtC1INGD0L/RgNCw0LLQu9C10L3QuNC1MTowOAYDVQQJDDHQv9C7LtCa0L7QvNGB0L7QvNC+0LvRjNGB0LrQsNGPINC0LjEg0LrQvtGA0L8uINCQMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxGzAZBgNVBAgMEjc3INCzLtCc0L7RgdC60LLQsDELMAkGA1UEBhMCUlUxTzBNBgNVBAMMRtCT0L7Qu9C+0LLQvdC+0Lkg0YPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAINCh0JLQo9CmINCi0J4CChE3QoEAAQABsG8wCgYGKoUDAgIJBQCgggJ1MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MTIwNTE1MDI0NFowLwYJKoZIhvcNAQkEMSIEIH/vXIOSahYaEHvkDi/5DzK9h7NL43uXIwoTkkGWjnRiMIICCAYLKoZIhvcNAQkQAi8xggH3MIIB8zCCAe8wggHrMAgGBiqFAwICCQQgKDk6KQvkaBvpS0J2nnhyxfOqB7GXi7R+3ILQXSSHTeEwggG7MIIBq6SCAacwggGjMSAwHgYJKoZIhvcNAQkBFhF2dWNAY2EuY3VzdG9tcy5ydTEaMBgGCCqFAwOBAwEBEgwwMDc3MzA2NTQ0NzExGDAWBgUqhQNkARINMTExNzc0Njg4OTk0MTF7MHkGA1UECgxy0KbQtdC90YLRgNCw0LvRjNC90L7QtSDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Qvi3RgtC10YXQvdC40YfQtdGB0LrQvtC1INGC0LDQvNC+0LbQtdC90L3QvtC1INGD0L/RgNCw0LLQu9C10L3QuNC1MTowOAYDVQQJDDHQv9C7LtCa0L7QvNGB0L7QvNC+0LvRjNGB0LrQsNGPINC0LjEg0LrQvtGA0L8uINCQMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxGzAZBgNVBAgMEjc3INCzLtCc0L7RgdC60LLQsDELMAkGA1UEBhMCUlUxTzBNBgNVBAMMRtCT0L7Qu9C+0LLQvdC+0Lkg0YPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAINCh0JLQo9CmINCi0J4CChE3QoEAAQABsG8wCgYGKoUDAgITBQAEQEHJ2BP4eZND/i3NnUNvzczIGrDDCJyTm366iWiGQ+JLMbyds6aI+sgpAfei62ftX8IeOnoHPwH1nYi2WRN9/MA=</SignatureValue><KeyInfo Id="KeyInfo"><X509Data><X509Certificate>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</X509Certificate></X509Data></KeyInfo><Object Id="Object"><ED_Container xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DocumentModeID="1006058E" xmlns="urn:customs.ru:Information:ExchangeDocuments:ED_Container:5.10.0">
+          <DocumentID xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2b4d99b8-d961-4a5b-971b-94687c09837d</DocumentID>
+          <FullSetIndicator>true</FullSetIndicator>
+          <ContainerDoc>
+            <DocBody><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="urn:xml-dsig:transformation:v1.1" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411" /><Reference URI="#KeyInfo"><Transforms><Transform Algorithm="urn:xml-dsig:transformation:v1.1" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411" /><DigestValue>vFS/4XfU33/2PHsCilglTxG0ybhP5kyeGcwOuAZ+sIA=</DigestValue></Reference><Reference URI="#Object"><Transforms><Transform Algorithm="urn:xml-dsig:transformation:v1.1" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411" /><DigestValue>y9MJzQ9gj1xZkqHZIzic4cVi+8ZU2B7nXglcIoBgiAQ=</DigestValue></Reference></SignedInfo><SignatureValue>MIIExgYJKoZIhvcNAQcCoIIEtzCCBLMCAQExDDAKBgYqhQMCAgkFADALBgkqhkiG9w0BBwExggSRMIIEjQIBATCCAbMwggGjMSAwHgYJKoZIhvcNAQkBFhF2dWNAY2EuY3VzdG9tcy5ydTEaMBgGCCqFAwOBAwEBEgwwMDc3MzA2NTQ0NzExGDAWBgUqhQNkARINMTExNzc0Njg4OTk0MTF7MHkGA1UECgxy0KbQtdC90YLRgNCw0LvRjNC90L7QtSDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Qvi3RgtC10YXQvdC40YfQtdGB0LrQvtC1INGC0LDQvNC+0LbQtdC90L3QvtC1INGD0L/RgNCw0LLQu9C10L3QuNC1MTowOAYDVQQJDDHQv9C7LtCa0L7QvNGB0L7QvNC+0LvRjNGB0LrQsNGPINC0LjEg0LrQvtGA0L8uINCQMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxGzAZBgNVBAgMEjc3INCzLtCc0L7RgdC60LLQsDELMAkGA1UEBhMCUlUxTzBNBgNVBAMMRtCT0L7Qu9C+0LLQvdC+0Lkg0YPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAINCh0JLQo9CmINCi0J4CChE3QoEAAQABsG8wCgYGKoUDAgIJBQCgggJ1MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MTIwNTE1MDI0NFowLwYJKoZIhvcNAQkEMSIEIPOeNfGtj5JsmSS91sUziI+fdTiA7FSv5LkBl+vu72mXMIICCAYLKoZIhvcNAQkQAi8xggH3MIIB8zCCAe8wggHrMAgGBiqFAwICCQQgKDk6KQvkaBvpS0J2nnhyxfOqB7GXi7R+3ILQXSSHTeEwggG7MIIBq6SCAacwggGjMSAwHgYJKoZIhvcNAQkBFhF2dWNAY2EuY3VzdG9tcy5ydTEaMBgGCCqFAwOBAwEBEgwwMDc3MzA2NTQ0NzExGDAWBgUqhQNkARINMTExNzc0Njg4OTk0MTF7MHkGA1UECgxy0KbQtdC90YLRgNCw0LvRjNC90L7QtSDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Qvi3RgtC10YXQvdC40YfQtdGB0LrQvtC1INGC0LDQvNC+0LbQtdC90L3QvtC1INGD0L/RgNCw0LLQu9C10L3QuNC1MTowOAYDVQQJDDHQv9C7LtCa0L7QvNGB0L7QvNC+0LvRjNGB0LrQsNGPINC0LjEg0LrQvtGA0L8uINCQMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxGzAZBgNVBAgMEjc3INCzLtCc0L7RgdC60LLQsDELMAkGA1UEBhMCUlUxTzBNBgNVBAMMRtCT0L7Qu9C+0LLQvdC+0Lkg0YPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAINCh0JLQo9CmINCi0J4CChE3QoEAAQABsG8wCgYGKoUDAgITBQAEQCDfxthdExSsH6g8YPdBiPVpRwPqfYJwD9YBiqrX/AGkSWi/lYI0nxQNYAilt54nPOPQ2Sz2Y5aq3wXxPMOssbc=</SignatureValue><KeyInfo Id="KeyInfo"><X509Data><X509Certificate>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</X509Certificate></X509Data></KeyInfo><Object Id="Object"><ESADout_CU xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DocumentModeID="1006107E" xmlns="urn:customs.ru:Information:CustomsDocuments:ESADout_CU:5.11.0">
+                    <DocumentID xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">033db49d-d259-4b2f-b8a0-11ccc5cc036e</DocumentID>
+                    <CustomsProcedure>ТТ</CustomsProcedure>
+                    <CustomsModeCode>00</CustomsModeCode>
+                    <LanguageCUESAD>RU</LanguageCUESAD>
+                    <RecipientCountryCode>RU</RecipientCountryCode>
+                    <ExecutionDate>2016-11-30</ExecutionDate>
+                    <ESADout_CUGoodsShipment>
+                      <SpecificationNumber xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</SpecificationNumber>
+                      <SpecificationListNumber xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</SpecificationListNumber>
+                      <TotalGoodsNumber xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</TotalGoodsNumber>
+                      <TotalPackageNumber xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</TotalPackageNumber>
+                      <TotalSheetNumber xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</TotalSheetNumber>
+                      <ESADout_CUConsignor>
+                        <OrganizationName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ARMATURENFABRIK FRANZ SCHNEIDER GMBH+CO.KG</OrganizationName>
+                        <OrganizationLanguage xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">RU</OrganizationLanguage>
+                        <Address xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <PostalCode>74226</PostalCode>
+                          <CountryCode>DE</CountryCode>
+                          <CounryName>ГЕРМАН�?Я</CounryName>
+                          <City>NORDHEIM</City>
+                          <StreetHouse>IM SCHELMENTAL 3-7</StreetHouse>
+                        </Address>
+                      </ESADout_CUConsignor>
+                      <ESADout_CUConsignee>
+                        <OrganizationName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">АО ПГ "МЕТРАН"</OrganizationName>
+                        <OrganizationLanguage xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">RU</OrganizationLanguage>
+                        <RFOrganizationFeatures xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <OGRN>1027402540065</OGRN>
+                          <INN>7448024720</INN>
+                          <KPP>742150001</KPP>
+                        </RFOrganizationFeatures>
+                        <Address xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <PostalCode>454003</PostalCode>
+                          <CountryCode>RU</CountryCode>
+                          <CounryName>РОСС�?Я</CounryName>
+                          <Region>ЧЕЛЯБ�?НСКАЯ ОБЛАСТЬ</Region>
+                          <City>ЧЕЛЯБ�?НСК</City>
+                          <StreetHouse>НОВОГРАДСК�?Й ПРОСПЕКТ 15</StreetHouse>
+                        </Address>
+                      </ESADout_CUConsignee>
+                      <ESADout_CUDeclarant>
+                        <OrganizationName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">АО ПГ "МЕТРАН"</OrganizationName>
+                        <OrganizationLanguage xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">RU</OrganizationLanguage>
+                        <RFOrganizationFeatures xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <OGRN>1027402540065</OGRN>
+                          <INN>7448024720</INN>
+                          <KPP>742150001</KPP>
+                        </RFOrganizationFeatures>
+                        <Address xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <PostalCode>454003</PostalCode>
+                          <CountryCode>RU</CountryCode>
+                          <CounryName>РОСС�?Я</CounryName>
+                          <Region>ЧЕЛЯБ�?НСКАЯ ОБЛАСТЬ</Region>
+                          <City>ЧЕЛЯБ�?НСК</City>
+                          <StreetHouse>НОВОГРАДСК�?Й ПРОСПЕКТ 15</StreetHouse>
+                        </Address>
+                      </ESADout_CUDeclarant>
+                      <ESADout_CUCarrier>
+                        <OrganizationName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">АО ПГ "МЕТРАН"</OrganizationName>
+                        <OrganizationLanguage xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">RU</OrganizationLanguage>
+                        <RFOrganizationFeatures xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <OGRN>1027402540065</OGRN>
+                          <INN>7448024720</INN>
+                          <KPP>742150001</KPP>
+                        </RFOrganizationFeatures>
+                        <Address xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                          <PostalCode>454003</PostalCode>
+                          <CountryCode>RU</CountryCode>
+                          <CounryName>РОСС�?Я</CounryName>
+                          <Region>ЧЕЛЯБ�?НСКАЯ ОБЛАСТЬ</Region>
+                          <City>ЧЕЛЯБ�?НСК</City>
+                          <StreetHouse>НОВОГРАДСК�?Й ПРОСПЕКТ 15</StreetHouse>
+                        </Address>
+                        <ESADout_CUDriverInformation>
+                          <PersonSurname xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">БЕСПАЛОВ</PersonSurname>
+                          <PersonName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">�?ГОРЬ</PersonName>
+                          <PersonMiddleName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ГР�?ГОРЬЕВ�?Ч</PersonMiddleName>
+                          <IdentityCard xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                            <IdentityCardCode>21</IdentityCardCode>
+                            <IdentityCardName>ПАСРФ</IdentityCardName>
+                            <IdentityCardSeries>75 04</IdentityCardSeries>
+                            <IdentityCardNumber>615230</IdentityCardNumber>
+                            <IdentityCardDate>2005-07-19</IdentityCardDate>
+                            <OrganizationName>УВД КУРЧАТОВСКОГО Р-НА Г. ЧЕЛЯБ�?НСКА</OrganizationName>
+                          </IdentityCard>
+                        </ESADout_CUDriverInformation>
+                      </ESADout_CUCarrier>
+                      <ESADout_CUConsigment>
+                        <ContainerIndicator xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">false</ContainerIndicator>
+                        <DispatchCountryCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">DE</DispatchCountryCode>
+                        <DispatchCountryName xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">ГЕРМАН�?Я</DispatchCountryName>
+                        <DestinationCountryCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">RU</DestinationCountryCode>
+                        <DestinationCountryName xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">РОСС�?Я</DestinationCountryName>
+                        <DateExpectedArrival>2016-09-30</DateExpectedArrival>
+                        <TimeExpectedArrival>11:11:11</TimeExpectedArrival>
+                        <ESADout_CUDepartureArrivalTransport>
+                          <TransportModeCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">30</TransportModeCode>
+                          <TransportNationalityCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">RU</TransportNationalityCode>
+                          <TransportMeansQuantity>1</TransportMeansQuantity>
+                          <MethodTransport>0</MethodTransport>
+                          <TransportMeans>
+                            <TransportIdentifier xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">Х 327 ЕМ 174</TransportIdentifier>
+                            <TransportMeansNationalityCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">RU</TransportMeansNationalityCode>
+                          </TransportMeans>
+                        </ESADout_CUDepartureArrivalTransport>
+                        <ESADout_CUBorderTransport>
+                          <TransportModeCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">40</TransportModeCode>
+                          <TransportNationalityCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">DE</TransportNationalityCode>
+                          <TransportMeansQuantity>1</TransportMeansQuantity>
+                          <MethodTransport>0</MethodTransport>
+                          <TransportMeans>
+                            <TransportIdentifier xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">TUP952</TransportIdentifier>
+                            <TransportMeansNationalityCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">DE</TransportMeansNationalityCode>
+                          </TransportMeans>
+                        </ESADout_CUBorderTransport>
+                        <PPBorderCustoms>
+                          <Code xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">10502030</Code>
+                          <OfficeName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">т/п �?рбитский</OfficeName>
+                          <CustomsCountryCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">643</CustomsCountryCode>
+                        </PPBorderCustoms>
+                        <TDDeliveryPlace>
+                          <DeliveryCustomsOffice>
+                            <Code xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">10502090</Code>
+                            <OfficeName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">т/п Асбестовский</OfficeName>
+                            <CustomsCountryCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">643</CustomsCountryCode>
+                          </DeliveryCustomsOffice>
+                        </TDDeliveryPlace>
+                      </ESADout_CUConsigment>
+                      <ESADout_CUMainContractTerms>
+                        <ContractCurrencyCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">EUR</ContractCurrencyCode>
+                        <TotalInvoiceAmount xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1424.62</TotalInvoiceAmount>
+                      </ESADout_CUMainContractTerms>
+                      <ESADout_CUGoods>
+                        <GoodsNumeric xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</GoodsNumeric>
+                        <GoodsDescription xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">Пиломатериалы из сосны</GoodsDescription>
+                        <GrossWeightQuantity xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">48</GrossWeightQuantity>
+                        <NetWeightQuantity xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</NetWeightQuantity>
+                        <NetWeightQuantity2 xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</NetWeightQuantity2>
+                        <InvoicedCost xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1424.62</InvoicedCost>
+                        <CustomsCost xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</CustomsCost>
+                        <StatisticalCost xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</StatisticalCost>
+                        <GoodsTNVEDCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">4407103300</GoodsTNVEDCode>
+                        <AdditionalSheetCount xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</AdditionalSheetCount>
+                        <QuantityFact xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</QuantityFact>
+                        <LanguageGoods>RU</LanguageGoods>
+                        <MilitaryProducts>false</MilitaryProducts>
+                        <CurrencyCode>EUR</CurrencyCode>
+                        <ESADout_CUPresentedDocument>
+                          <PrDocumentName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">�?НД�?В�?ДУАЛЬНАЯ НАКЛАДНАЯ ПР�? ЭКСПРЕСС-ДОСТАВКЕ</PrDocumentName>
+                          <PrDocumentNumber xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">4061512232</PrDocumentNumber>
+                          <PrDocumentDate xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2016-09-16</PrDocumentDate>
+                          <PresentedDocumentModeCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">02021</PresentedDocumentModeCode>
+                          <TemporaryImportCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</TemporaryImportCode>
+                          <ProcessingGoodsCost xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</ProcessingGoodsCost>
+                          <ProvidingIndicationMark xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</ProvidingIndicationMark>
+                          <RFG44PresentedDocId xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">
+                            <ElectronicDocumentID>74cf8b5d-40ae-4384-8363-130c7b19b77c</ElectronicDocumentID>
+                            <ElectronicArchID>e878a440-eb7f-4abe-87be-c4fc7929c21a</ElectronicArchID>
+                            <DocumentModeID>1003301E</DocumentModeID>
+                          </RFG44PresentedDocId>
+                        </ESADout_CUPresentedDocument>
+                        <ESADout_CUPresentedDocument>
+                          <PrDocumentName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">License</PrDocumentName>
+                          <PrDocumentNumber xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">424696</PrDocumentNumber>
+                          <PrDocumentDate xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2016-12-05</PrDocumentDate>
+                          <PresentedDocumentModeCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">01017</PresentedDocumentModeCode>
+                          <TemporaryImportCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</TemporaryImportCode>
+                          <ProcessingGoodsCost xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</ProcessingGoodsCost>
+                          <ProvidingIndicationMark xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</ProvidingIndicationMark>
+                          <RFG44PresentedDocId xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">
+                            <ElectronicDocumentID>877d534a-cf09-435a-b64b-cb41331652e9</ElectronicDocumentID>
+                            <ElectronicArchID>e878a440-eb7f-4abe-87be-c4fc7929c21a</ElectronicArchID>
+                            <DocumentModeID>1002007E</DocumentModeID>
+                          </RFG44PresentedDocId>
+                        </ESADout_CUPresentedDocument>
+                        <SupplementaryGoodsQuantity>
+                          <GoodsQuantity xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">100</GoodsQuantity>
+                          <MeasureUnitQualifierName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">М3</MeasureUnitQualifierName>
+                          <MeasureUnitQualifierCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">113</MeasureUnitQualifierCode>
+                        </SupplementaryGoodsQuantity>
+                        <ESADGoodsPackaging>
+                          <PakageQuantity xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</PakageQuantity>
+                          <PakageTypeCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">1</PakageTypeCode>
+                          <PakagePartQuantity xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">0</PakagePartQuantity>
+                          <PackageCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">6H</PackageCode>
+                          <PackingInformation xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">
+                            <PackingCode>CT</PackingCode>
+                            <PakingQuantity>1</PakingQuantity>
+                          </PackingInformation>
+                        </ESADGoodsPackaging>
+                        <ESADoutGoodsOrganization>
+                          <OrganizationName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">АО ПГ "МЕТРАН"</OrganizationName>
+                          <RFOrganizationFeatures xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                            <OGRN>1027402540065</OGRN>
+                            <INN>7448024720</INN>
+                            <KPP>742150001</KPP>
+                          </RFOrganizationFeatures>
+                          <Address xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">
+                            <PostalCode>454003</PostalCode>
+                            <CountryCode>RU</CountryCode>
+                            <CounryName>РОСС�?Я</CounryName>
+                            <Region>ЧЕЛЯБ�?НСКАЯ ОБЛАСТЬ</Region>
+                            <City>ЧЕЛЯБ�?НСК</City>
+                            <StreetHouse>НОВОГРАДСК�?Й ПРОСПЕКТ 15</StreetHouse>
+                          </Address>
+                        </ESADoutGoodsOrganization>
+                      </ESADout_CUGoods>
+                      <TDGuarantee>
+                        <MeasureCode xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">00</MeasureCode>
+                      </TDGuarantee>
+                    </ESADout_CUGoodsShipment>
+                    <FilledPerson>
+                      <PersonSurname xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ТАРАСОВ</PersonSurname>
+                      <PersonName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ДЕН�?С</PersonName>
+                      <PersonMiddleName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">АЛЕКСАНДРОВ�?Ч</PersonMiddleName>
+                      <AuthoritesDocument xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">
+                        <PrDocumentName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ДОВЕРЕННОСТЬ</PrDocumentName>
+                        <PrDocumentNumber xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">45</PrDocumentNumber>
+                        <PrDocumentDate xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2016-02-01</PrDocumentDate>
+                        <ComplationAuthorityDate xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2017-01-31</ComplationAuthorityDate>
+                      </AuthoritesDocument>
+                      <IdentityCard xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0">
+                        <IdentityCardCode xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">21</IdentityCardCode>
+                        <IdentityCardName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ПАСРФ</IdentityCardName>
+                        <IdentityCardSeries xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">75 05</IdentityCardSeries>
+                        <IdentityCardNumber xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">693776</IdentityCardNumber>
+                        <IdentityCardDate xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2005-11-03</IdentityCardDate>
+                        <OrganizationName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">ОВД АРГАЯШСКОГО Р-НА ЧЕЛЯБ�?НСКОЙ ОБЛАСТ�?</OrganizationName>
+                      </IdentityCard>
+                      <Contact xmlns="urn:customs.ru:CUESADCommonAggregateTypesCust:5.11.0" />
+                    </FilledPerson>
+                  </ESADout_CU></Object></Signature></DocBody>
+          </ContainerDoc>
+          <ContainerDoc>
+            <DocBody><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="urn:xml-dsig:transformation:v1.1" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411" /><Reference URI="#KeyInfo"><Transforms><Transform Algorithm="urn:xml-dsig:transformation:v1.1" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411" /><DigestValue>vFS/4XfU33/2PHsCilglTxG0ybhP5kyeGcwOuAZ+sIA=</DigestValue></Reference><Reference URI="#Object"><Transforms><Transform Algorithm="urn:xml-dsig:transformation:v1.1" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411" /><DigestValue>TvgX6Cra1U/Hbg4loLLSq0iJYm7O81q0nBLeHJQch2g=</DigestValue></Reference></SignedInfo><SignatureValue>MIIExgYJKoZIhvcNAQcCoIIEtzCCBLMCAQExDDAKBgYqhQMCAgkFADALBgkqhkiG9w0BBwExggSRMIIEjQIBATCCAbMwggGjMSAwHgYJKoZIhvcNAQkBFhF2dWNAY2EuY3VzdG9tcy5ydTEaMBgGCCqFAwOBAwEBEgwwMDc3MzA2NTQ0NzExGDAWBgUqhQNkARINMTExNzc0Njg4OTk0MTF7MHkGA1UECgxy0KbQtdC90YLRgNCw0LvRjNC90L7QtSDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Qvi3RgtC10YXQvdC40YfQtdGB0LrQvtC1INGC0LDQvNC+0LbQtdC90L3QvtC1INGD0L/RgNCw0LLQu9C10L3QuNC1MTowOAYDVQQJDDHQv9C7LtCa0L7QvNGB0L7QvNC+0LvRjNGB0LrQsNGPINC0LjEg0LrQvtGA0L8uINCQMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxGzAZBgNVBAgMEjc3INCzLtCc0L7RgdC60LLQsDELMAkGA1UEBhMCUlUxTzBNBgNVBAMMRtCT0L7Qu9C+0LLQvdC+0Lkg0YPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAINCh0JLQo9CmINCi0J4CChE3QoEAAQABsG8wCgYGKoUDAgIJBQCgggJ1MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MTIwNTE1MDI0NFowLwYJKoZIhvcNAQkEMSIEIP45eILYeMKPziUZMJsplqxgfqYx6yNUNwmUpNl0iEo9MIICCAYLKoZIhvcNAQkQAi8xggH3MIIB8zCCAe8wggHrMAgGBiqFAwICCQQgKDk6KQvkaBvpS0J2nnhyxfOqB7GXi7R+3ILQXSSHTeEwggG7MIIBq6SCAacwggGjMSAwHgYJKoZIhvcNAQkBFhF2dWNAY2EuY3VzdG9tcy5ydTEaMBgGCCqFAwOBAwEBEgwwMDc3MzA2NTQ0NzExGDAWBgUqhQNkARINMTExNzc0Njg4OTk0MTF7MHkGA1UECgxy0KbQtdC90YLRgNCw0LvRjNC90L7QtSDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Qvi3RgtC10YXQvdC40YfQtdGB0LrQvtC1INGC0LDQvNC+0LbQtdC90L3QvtC1INGD0L/RgNCw0LLQu9C10L3QuNC1MTowOAYDVQQJDDHQv9C7LtCa0L7QvNGB0L7QvNC+0LvRjNGB0LrQsNGPINC0LjEg0LrQvtGA0L8uINCQMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxGzAZBgNVBAgMEjc3INCzLtCc0L7RgdC60LLQsDELMAkGA1UEBhMCUlUxTzBNBgNVBAMMRtCT0L7Qu9C+0LLQvdC+0Lkg0YPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAINCh0JLQo9CmINCi0J4CChE3QoEAAQABsG8wCgYGKoUDAgITBQAEQDshY4jitY7hsrorC3T6yaWasMhIChulWlTUBfK06DUWq6miqIXYOEBElraXijqzAT3Fr6+kPdWLsJfxwgaZqV0=</SignatureValue><KeyInfo Id="KeyInfo"><X509Data><X509Certificate>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</X509Certificate></X509Data></KeyInfo><Object Id="Object"><Inventory xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:customs.ru:Information:CustomsDocuments:Inventory:5.11.0" DocumentModeID="1006003E">
+                    <DocumentID xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">2efb9e04-3ccd-42db-9ebe-ccddab7f38ae</DocumentID>
+                    <NumberOfInvent>1</NumberOfInvent>
+                    <GTDPerson />
+                    <InventoryInstance>
+                      <InstanceNumber>1</InstanceNumber>
+                      <InventoryInstanceDate>2016-09-22</InventoryInstanceDate>
+                      <InventoryInstancePerson>
+                        <PersonSurname xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">Петро</PersonSurname>
+                        <PersonName xmlns="urn:customs.ru:CommonAggregateTypes:5.10.0">Алексей</PersonName>
+                      </InventoryInstancePerson>
+                      <InventDocument>
+                        <InvDocCode>02015</InvDocCode>
+                        <InvDocName>CMR</InvDocName>
+                        <InvDocNumber>3</InvDocNumber>
+                        <InvDocDate>2016-12-04</InvDocDate>
+                        <InvDocLists>0</InvDocLists>
+                        <Note>Прикреплен из электронного архива</Note>
+                        <ArchID>4e131bb7-5eaa-4b89-b0ab-e7f56359e906</ArchID>
+                        <ArchDocID>a672610f-eda1-468f-943a-79e9585cee01</ArchDocID>
+                        <InventLineID>30e8f2d9-10be-4b1b-864b-b66b5792c4ac</InventLineID>
+                        <DocumentFormSign>0</DocumentFormSign>
+                      </InventDocument>
+					  <InventDocument>
+                        <InvDocCode>09999</InvDocCode>
+                        <InvDocName>FreeDoc</InvDocName>
+                        <InvDocNumber>4</InvDocNumber>
+                        <InvDocDate>2016-12-04</InvDocDate>
+                        <InvDocLists>0</InvDocLists>
+                        <Note>Прикреплен из электронного архива</Note>
+                        <ArchID>4e131bb7-5eaa-4b89-b0ab-e7f56359e906</ArchID>
+                        <ArchDocID>48e08d9d-0e8e-4476-aef5-e7a37fabb4c5</ArchDocID>
+                        <InventLineID>30e8f2d9-10be-4b1b-864b-b66b5792c4ac</InventLineID>
+                        <DocumentFormSign>0</DocumentFormSign>
+                      </InventDocument>
+					  <InventDocument>
+                        <InvDocCode>02015</InvDocCode>
+                        <InvDocName>CMR-no attributes</InvDocName>
+                        <DocumentFormSign>0</DocumentFormSign>
+                      </InventDocument>
+					  <InventDocument>
+                        <InvDocCode>09999</InvDocCode>
+                        <InvDocName>FreeDoc-wrong arch ids</InvDocName>
+                        <InvDocNumber>4</InvDocNumber>
+                        <InvDocDate>2016-12-04</InvDocDate>
+                        <InvDocLists>0</InvDocLists>
+                        <Note>Прикреплен из электронного архива</Note>
+                        <ArchID>4e131bb7-5eaa-4b89-b0ab-e7f56359e906</ArchID>
+                        <ArchDocID>48e08d9d-0e8e-4476-aef5-e7a37fabb4ss</ArchDocID>
+                        <InventLineID>30e8f2d9-10be-4b1b-864b-b66b5792c4ss</InventLineID>
+                        <DocumentFormSign>0</DocumentFormSign>
+                      </InventDocument>
+                    </InventoryInstance>
+                  </Inventory></Object></Signature></DocBody>
+          </ContainerDoc>
+        </ED_Container></Object></Signature></Body>
+</Envelope>

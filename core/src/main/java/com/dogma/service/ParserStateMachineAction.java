@@ -2,6 +2,7 @@ package com.dogma.service;
 
 import com.dogma.enums.MachineState;
 
+import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,32 +18,44 @@ public class ParserStateMachineAction {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Setter
+    @Getter
     private char[] document;
 
     @Setter
+    @Getter
     private ContentHandler handler = new ContentHandler();
+
+
 
     private Queue<ActionState> actionStatesStack = new ArrayDeque<ActionState>();
 
-    public void onAction(final MachineState state, final int indexElement) {
+    public void onAction(final MachineState state, final char symbol) {
         switch (state) {
             case ELEMENT: {
-                registerAction(state, indexElement);
+                registerAction(state, symbol);
                 break;
             }
             case END_ELEMENT: {
-                registerAction(state, indexElement);
+                registerAction(state, symbol);
                 break;
             }
             case ATTRIBUTE: {
-                registerAction(state, indexElement);
+                registerAction(state, symbol);
                 break;
             }
             case VALUE: {
-                registerAction(state, indexElement);
+                registerAction(state, symbol);
                 break;
             }
             case END_OPEN_TAG: {
+                endOpenTagAction();
+                break;
+            }
+            case END_VALUE: {
+                endOpenTagAction();
+                break;
+            }
+            case CLOSE_END_ELEMENT: {
                 endOpenTagAction();
                 break;
             }
@@ -95,9 +108,9 @@ public class ParserStateMachineAction {
      * @param machineState состояние автомата.
      * @param indexElement индекс эллемента.
      */
-    private void registerAction(final MachineState machineState, final int indexElement) {
+    private void registerAction(final MachineState machineState, final char symbol) {
         if (actionStatesStack.isEmpty()) {
-            actionStatesStack.add(new ActionState(machineState, indexElement));
+            actionStatesStack.add(new ActionState(machineState, symbol));
         } else {
             actionStatesStack.peek().repeatActions();
         }
@@ -124,7 +137,7 @@ public class ParserStateMachineAction {
 
         public ActionState(final MachineState machineState, final int startIndex) {
             this.machineState = machineState;
-            this.startIndex = startIndex + 1;
+            this.startIndex = startIndex;
             this.length = 1;
         }
 

@@ -5,9 +5,10 @@ import com.dogma.exceptions.StateMachineTransmissionException;
 
 
 /**
- * Сервис осуществления переходов для автомата..
+ * Сервис осуществления переходов для автомата.
  */
-public class ParserStateMachineTransmission {
+public enum ParserStateMachineTransmission {
+    INSTANCE();
 
     /**
      * Возвращает состояние автомата согласно символу перехода.
@@ -15,8 +16,8 @@ public class ParserStateMachineTransmission {
      * @param symbol символ перехода.
      * @return состояние автомата.
      */
-    public MachineState getState(final char symbol, final MachineState prevState) throws
-            StateMachineTransmissionException {
+    public MachineState getState(final char symbol, final MachineState prevState, int i)
+            throws StateMachineTransmissionException {
         switch (prevState) {
             case INITIAL_STATE: {
                 if (symbol == '<') {
@@ -60,6 +61,8 @@ public class ParserStateMachineTransmission {
             case END_XML_CONTENT: {
                 if (symbol == '<') {
                     return MachineState.OPEN_TAG;
+                } else if (symbol == ' ') {
+                    return prevState;
                 } else {
                     throw new StateMachineTransmissionException(prevState);
                 }
@@ -83,6 +86,8 @@ public class ParserStateMachineTransmission {
             case END_OPEN_TAG: {
                 if (symbol == '<') {
                     return MachineState.OPEN_TAG;
+                } else if (symbol == ' ') {
+                    return prevState;
                 } else {
                     return MachineState.VALUE;
                 }
@@ -124,6 +129,8 @@ public class ParserStateMachineTransmission {
             case CLOSE_END_ELEMENT: {
                 if (symbol == '<') {
                     return MachineState.OPEN_TAG;
+                } else if (symbol == ' ') {
+                    return prevState;
                 } else {
                     throw new StateMachineTransmissionException(prevState);
                 }
@@ -131,6 +138,10 @@ public class ParserStateMachineTransmission {
             case CLOSE_TAG: {
                 if (symbol == '<') {
                     return MachineState.OPEN_TAG;
+                } else if (symbol == ' ') {
+                    return prevState;
+                } else {
+                    throw new StateMachineTransmissionException(prevState);
                 }
             }
             case ATTRIBUTE: {
@@ -140,9 +151,6 @@ public class ParserStateMachineTransmission {
                     }
                     case '>': {
                         return MachineState.END_OPEN_TAG;
-                    }
-                    case '/': {
-                        return MachineState.START_CLOSE_TAG;
                     }
                     default: {
                         return prevState;
